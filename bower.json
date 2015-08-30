@@ -1,6 +1,6 @@
 {
   "name": "ng-mau",
-  "version": "0.1",
+  "version": "0.0.1",
   "devDependencies": {
     "angular": "~1.4",
     "angular-mocks": "~1.4",
