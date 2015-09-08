@@ -1,25 +1,18 @@
-angular.module( 'ngMau', [
-  'templates-app',
-  'templates-common',
-  'ngMau.home',
-  'ngMau.about',
-  'ui.router'
-])
+(function (angular) {
+  'use strict';
+  angular.module('ngSpa', [
+    'templates-app',
+    'templates-common',
+    'ngSpa.home',
+    'ngSpa.about',
+    'ngSpa.common.pageFooter',
+    'ngSpa.common.pageMenu',
+    'ngRoute',
+    'ngAnimate'
+  ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
-})
+    .run(['$rootScope', function ($rootScope) {
 
-.run( function run () {
-})
+    }]);
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-    if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ng-mau' ;
-    }
-  });
-})
-
-;
-
+})(window.angular);

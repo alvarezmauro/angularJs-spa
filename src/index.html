@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="ngMau" ng-controller="AppCtrl">
+<html ng-app="ngSpa">
   <head>
     <title ng-bind="pageTitle"></title>
 
     <!-- social media tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@neomau">
-    <meta name="twitter:title" content="ng-mau">
+    <meta name="twitter:title" content="ng-spa">
     <meta name="twitter:description" content="A sophisticated build management system for single web apps. Based in @joshdmiller ngbp project. Created by @neomau.">
     <meta name="twitter:creator" content="@neomau">
     <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
-    <meta property="og:title" content="ng-mau" />
+    <meta property="og:title" content="ng-spa" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bit.ly/ng-mau" />
+    <meta property="og:url" content="http://bit.ly/ng-spa" />
     <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
     <meta property="og:description" content="A sophisticated build management system for single web apps. Based in @joshdmiller ngbp project. Created by @neomau.">
 
@@ -33,83 +33,10 @@
     </script>
   </head>
   <body>
-    <div class="container">
-      <div class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
-            ng-click="menuCollapsed = ! menuCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand">
-            ng-mau
-            <small>
-              <a href="https://github.com/neomau/ng-mau">
-                v<%= version %>
-              </a>
-            </small>
-          </div>
-        </div>
-        <div class="collapse navbar-collapse" collapse="menuCollapsed">
-          <ul class="nav navbar-nav">
-            <li ui-sref-active="active">
-              <a href ui-sref="home">
-                <i class="fa fa-home"></i>
-                Home
-              </a>
-            </li>
-            <li ui-sref-active="active">
-              <a href ui-sref="about">
-                <i class="fa fa-info-circle"></i>
-                What is it?
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/neomau/ng-mau#readme">
-                <i class="fa fa-book"></i>
-                Read the Docs
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/neomau/ng-mau">
-                <i class="fa fa-github-alt"></i>
-                Github
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+    <div class="page-container">
+      <div class="container page {{ pageClass }}" ng-view></div>
     </div>
 
-    <div class="container" ui-view="main"></div>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <ul class="social">
-            <li><a target="_blank" href="https://plus.google.com/+mauroalvarez86"><i class="fa fa-google-plus-sign"></i></a></li>
-            <li><a target="_blank" href="http://twitter.com/neomau"><i class="fa fa-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="https://au.linkedin.com/in/alvarezmauro"><i class="fa fa-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="https://github.com/neomau/ng-mau"><i class="fa fa-github-sign"></i></a></li>
-          </ul>
-          
-
-          <p>
-            (c) 2015 <a href="http://www.mauroalvarez.com">Mauro Roverto Alvarez</a>. 
-            <a href="https://github.com/neomau/ng-mau/fork_select">Fork this</a>
-            to kickstart your next project.
-            <br />
-            ngbp is based on
-            <a href="http://www.angularjs.org">AngularJS</a>,
-            <a href="http://getbootstrap.com">Bootstrap</a>, 
-            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
-            and 
-            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.        
-          </p>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "devDependencies": {
     "angular": "~1.4",
-    "angular-mocks": "~1.4",
-    "bootstrap": "~3.1",
+    "angular-animate": "~1.4.5",
     "angular-bootstrap": "~0.13.3",
-    "angular-ui-router": "~0.2"
+    "angular-mocks": "~1.4",
+    "angular-route": "~1.4.5",
+    "angular-ui-router": "~0.2",
+    "bootstrap": "~3.1"
   },
   "dependencies": {}
 }
