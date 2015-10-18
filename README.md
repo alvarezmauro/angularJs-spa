@@ -1,4 +1,4 @@
-# [ng-mau](https://github.com/neomau/ng-mau)
+# [ng-spa](https://github.com/neomau/ng-spa)
 
 An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
 
@@ -9,24 +9,24 @@ An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
 Install Node.js and then:
 
 ```sh
-$ git clone git://github.com/neomau/ng-mau
-$ cd ng-mau
+$ git clone git://github.com/neomau/ng-spa
+$ cd ng-spa
 $ sudo npm -g install grunt-cli karma bower
 $ npm install
 $ bower install
 $ grunt watch
 ```
 
-Finally, open `file:///path/to/ng-mau/build/index.html` in your browser.
+Finally, open `file:///path/to/ng-spa/build/index.html` in your browser.
 
 Happy hacking!
 
 ## Purpose
 
-`ng-mau` is designed to make life easy by providing a basic framework
+`ng-spa` is designed to make life easy by providing a basic framework
 with which to kickstart AngularJS projects. It contains a best-practice
 directory structure to ensure code reusability and maximum scalability.
-ng-mau also comes prepackaged with the most popular design frameworks
+ng-spa also comes prepackaged with the most popular design frameworks
 around: [Twitter Bootstrap](http://getbootstrap.com),
 [Angular UI](http://angular-ui.github.io),
 [Angular Bootstrap](http://angular-ui.github.io/bootstrap),
@@ -37,8 +37,8 @@ All you have to do is clone it and start coding!
 
 ## Philosophy
 
-The principal goal of `ng-mau` is to set projects up for long-term
-success.  So `ng-mau` tries to follow best practices everywhere it can.
+The principal goal of `ng-spa` is to set projects up for long-term
+success.  So `ng-spa` tries to follow best practices everywhere it can.
 These are:
 
 - Properly orchestrated modules to encourage drag-and-drop component re-use.
@@ -56,9 +56,9 @@ These are:
 - Well-documented, to show new developers *why* things are set up the way they
   are.
 - It should be responsive to evidence. Community feedback is therefore crucial
-  to the success of `ng-mau`.
+  to the success of `ng-spa`.
 
-But `ng-mau` is not an example of an AngularJS app: this is a
+But `ng-spa` is not an example of an AngularJS app: this is a
 kickstarter. If you're looking for an example of what a complete, non-trivial
 AngularJS app that does something real looks like, complete with a REST backend
 and authentication and authorization, then take a look at
@@ -72,7 +72,7 @@ that - and does it well.
 At a high level, the structure looks roughly like this:
 
 ```
-ng-mau/
+ng-spa/
   |- grunt-tasks/
   |- karma/
   |- src/
@@ -123,7 +123,7 @@ learn more.
 ### Detailed Installation
 
 This section provides a little more detailed understanding of what goes into
-getting `ng-mau` up and running. Though `ng-mau` is really simple
+getting `ng-spa` up and running. Though `ng-spa` is really simple
 to use, it might help to have an understanding of the tools involved here, like
 Node.js and Grunt and Bower. If you're completely new to highly organized,
 modern JavaScript development, take a few short minutes to read [this overview
@@ -131,7 +131,7 @@ of the tools](tools.md) before continuing with this section.
 
 Okay, ready to go? Here it is:
 
-`ng-mau` uses [Grunt](http://gruntjs.org) as its build system, so
+`ng-spa` uses [Grunt](http://gruntjs.org) as its build system, so
 [Node.js](http://nodejs.org) is required. Also, Grunt by default no longer comes
 with a command-line utility and Karma and Bower must end up in your global path
 for the build system to find it, so they must be installed independently. Once
@@ -149,7 +149,7 @@ from GitHub, or merge the branch into your existing repository. Assuming you're
 starting from scratch, simply clone this repository using git:
 
 ```sh
-$ git clone git://github.com/neomau/ng-mau my-project-name
+$ git clone git://github.com/neomau/ng-spa my-project-name
 $ cd my-project-name
 ```
 
@@ -163,7 +163,7 @@ This will read the `dependencies` (empty by default) and the `devDependencies`
 (which contains our build requirements) from `package.json` and install
 everything needed into a folder called `node_modules/`.
 
-There are many Bower packages used by `ng-mau`, like Twitter Bootstrap
+There are many Bower packages used by `ng-spa`, like Twitter Bootstrap
 and Angular UI, which are listed in `bower.js`. To install them into the
 `vendor/` directory, simply run:
 
@@ -184,7 +184,7 @@ application (or we download it from a different computer), we can simply run the
 `bower install` command as above and all our dependencies will be installed for
 us. Neat!
 
-Technically, `ng-mau` is now ready to go.
+Technically, `ng-spa` is now ready to go.
 
 However, prior to hacking on your application, you will want to modify the
 `package.json` file to contain your project's information. Do not remove any
@@ -240,7 +240,7 @@ $ grunt
 The best way to learn about the build system is by familiarizing yourself with
 Grunt and then reading through the heavily documented build script,
 `Gruntfile.js`. But you don't need to do that to be very productive with
-`ng-mau`. What follows in this section is a quick introduction to the
+`ng-spa`. What follows in this section is a quick introduction to the
 tasks provided and should be plenty to get you started.
 
 The driver of the process is the `delta` multi-task, which watches for file
@@ -256,7 +256,7 @@ changes:
   values configured dynamically by Grunt.
 * `delta:less` - When any `*.less` file within `src/` changes, the
   `src/less/main.less` file is linted and copied into
-  `build/assets/ng-mau.css`.
+  `build/assets/ng-spa.css`.
 * `delta:jssrc` - When any JavaScript file within `src/` that does not end in
   `.spec.js` changes, all JavaScript sources are linted, all unit tests are run,
   and the all source files are re-copied to `build/src`.
@@ -314,7 +314,7 @@ expected, open the `bin/index.html` file in your browser. Voila!
 
 ### Live Reload!
 
-`ng-mau` also includes [Live Reload](http://livereload.com/), so you no
+`ng-spa` also includes [Live Reload](http://livereload.com/), so you no
 longer have to refresh your page after making changes! You need a Live Reload
 browser plugin for this:
 
@@ -324,7 +324,7 @@ browser plugin for this:
 - Internet Explorer - Surely you jest.
 
 Note that if you're using the Chrome version with `file://` URLs (as is the
-default with `ng-mau`) you need to tell Live Reload to allow it. Go to
+default with `ng-spa`) you need to tell Live Reload to allow it. Go to
 `Menu -> Tools -> Extensions` and check the "Allow access to file URLs" box next
 to the Live Reload plugin.
 
@@ -363,7 +363,7 @@ Naturally, I am open to all manner of ideas and suggestions. See the
 
 ### To Do
 
-See the [issues list](http://github.com/neomau/ng-mau/issues). And
+See the [issues list](http://github.com/neomau/ng-spa/issues). And
 feel free to submit your own!
 
 ### Contributing
