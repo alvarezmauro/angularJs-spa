@@ -1,6 +1,5 @@
 angular.module('ngSpa.about', [
   'ngRoute',
-  'placeholders',
   'ui.bootstrap'
 ])
 

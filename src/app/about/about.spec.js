@@ -4,10 +4,10 @@
  * build process will exclude all `.spec.js` files from the build
  * automatically.
  */
-describe( 'about section', function() {
-  beforeEach( module( 'ngSpa.about' ) );
-
-  it( 'should have a dummy test', inject( function() {
-    expect( true ).toBeTruthy();
-  }));
-});
+//describe( 'about section', function() {
+//  beforeEach( module( 'ngSpa.about' ) );
+//
+//  it( 'should have a dummy test', inject( function() {
+//    expect( true ).toBeTruthy();
+//  }));
+//});

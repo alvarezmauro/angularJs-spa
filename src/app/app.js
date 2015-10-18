@@ -11,6 +11,10 @@
     'ngAnimate'
   ])
 
+    .config(['$routeProvider', function ($routeProvider) {
+      $routeProvider.otherwise('/home');
+    }])
+
     .run(['$rootScope', function ($rootScope) {
 
     }]);
