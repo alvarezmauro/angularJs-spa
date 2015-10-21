@@ -107,24 +107,11 @@ h2 {
 /* page specific animations ------------------------ */
 
 /* home -------------------------- */
-//.page-home.ng-leave         {
-//  -webkit-transform-origin: 0% 0%;
-//  -webkit-animation: rotateFall 1s both ease-in;
-//  -moz-transform-origin: 0% 0%;
-//  -moz-animation: rotateFall 1s both ease-in;
-//  transform-origin: 0% 0%;
-//  animation: rotateFall 1s both ease-in;
-//}
-//.page-home.ng-enter 		{
-//  -webkit-animation:scaleUp 0.5s both ease-in;
-//  -moz-animation:scaleUp 0.5s both ease-in;
-//  animation:scaleUp 0.5s both ease-in;
-//}
 .page-home.ng-leave{
-  .bounce(5s);
+  .animate-pulse(1s);
 }
 .page-home.ng-enter{
-  .bounce(5s);
+  .animate-swing(1s);
 }
 
 /* about ------------------------ */
