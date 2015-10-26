@@ -78,6 +78,12 @@ h2 {
 /********************************************/
 /* PAGES
 ============================================================================= */
+html, body{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .page-container{
   position: relative;
   width: 100%;
@@ -108,22 +114,18 @@ h2 {
 
 /* home -------------------------- */
 .page-home.ng-leave{
-  .animate-hinge(2s);
+  .animate-slideOutUp();
 }
 .page-home.ng-enter{
-  .animate-hinge(2s);
+  .animate-slideInDown();
 }
 
 /* about ------------------------ */
 .page-about.ng-leave        {
-  -webkit-animation:slideOutLeft 0.5s both ease-in;
-  -moz-animation:slideOutLeft 0.5s both ease-in;
-  animation:slideOutLeft 0.5s both ease-in;
+  .animate-slideOutUp();
 }
 .page-about.ng-enter 		{
-  -webkit-animation:slideInRight 0.5s both ease-in;
-  -moz-animation:slideInRight 0.5s both ease-in;
-  animation:slideInRight 0.5s both ease-in;
+  .animate-slideInDown();
 }
 
 /* contact ---------------------- */

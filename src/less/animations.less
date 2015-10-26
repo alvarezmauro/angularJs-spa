@@ -1,4 +1,6 @@
-.animate(@duration:1s, @delay:0) {
+@animateDefaultDuration: 1s;
+@animateDefaultDelay: 0;
+.animate(@duration: @animateDefaultDuration, @delay:0) {
   -webkit-animation-duration: @duration;
   animation-duration: @duration;
   animation-delay: @delay;
@@ -65,12 +67,12 @@
   }
 }
 
-.animate-bounce(@duration:1s, @delay:0) {
-  .animate(@duration:1s, @delay);
+.animate-bounce(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay, @transform-origin:center bottom) {
+  .animate(@duration, @delay);
   -webkit-animation-name: animate-bounce;
   animation-name: animate-bounce;
-  -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  -webkit-transform-origin: @transform-origin;
+  transform-origin: @transform-origin;
 };
 
 @-webkit-keyframes animate-flash {
@@ -93,7 +95,7 @@
   }
 }
 
-.animate-flash(@duration:1s, @delay:0) {
+.animate-flash(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-flash;
   animation-name: animate-flash;
@@ -133,7 +135,7 @@
   }
 }
 
-.animate-pulse(@duration:1s, @delay:0) {
+.animate-pulse(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-pulse;
   animation-name: animate-pulse;
@@ -213,7 +215,7 @@
   }
 }
 
-.animate-rubberBand(@duration:1s, @delay:0) {
+.animate-rubberBand(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rubberBand;
   animation-name: animate-rubberBand;
@@ -253,7 +255,7 @@
   }
 }
 
-.animate-shake(@duration:1s, @delay:0) {
+.animate-shake(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-shake;
   animation-name: animate-shake;
@@ -313,10 +315,10 @@
   }
 }
 
-.animate-swing(@duration:1s, @delay:0) {
+.animate-swing(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay, @transform-origin:top center) {
   .animate(@duration, @delay);
-  -webkit-transform-origin: top center;
-  transform-origin: top center;
+  -webkit-transform-origin: @transform-origin;
+  transform-origin: @transform-origin;
   -webkit-animation-name: animate-swing;
   animation-name: animate-swing;
 };
@@ -375,7 +377,7 @@
   }
 }
 
-.animate-tada(@duration:1s, @delay:0) {
+.animate-tada(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-tada;
   animation-name: animate-tada;
@@ -455,7 +457,7 @@
   }
 }
 
-.animate-wobble(@duration:1s, @delay:0) {
+.animate-wobble(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-wobble;
   animation-name: animate-wobble;
@@ -545,12 +547,12 @@
   }
 }
 
-.animate-jello(@duration:1s, @delay:0) {
+.animate-jello(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay, @transform-origin:center) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-jello;
   animation-name: animate-jello;
-  -webkit-transform-origin: center;
-  transform-origin: center;
+  -webkit-transform-origin: @transform-origin;
+  transform-origin: @transform-origin;
 };
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -637,7 +639,7 @@
   }
 }
 
-.animate-bounceIn(@duration:1s, @delay:0) {
+.animate-bounceIn(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceIn;
   animation-name: animate-bounceIn;
@@ -711,7 +713,7 @@
   }
 }
 
-.bounceInDown(@duration:1s, @delay:0) {
+.animate-bounceInDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceInDown;
   animation-name: animate-bounceInDown;
@@ -785,7 +787,7 @@
   }
 }
 
-.bounceInLeft(@duration:1s, @delay:0) {
+.animate-bounceInLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceInLeft;
   animation-name: animate-bounceInLeft;
@@ -859,7 +861,7 @@
   }
 }
 
-.animate-bounceInRight(@duration:1s, @delay:0) {
+.animate-bounceInRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceInRight;
   animation-name: animate-bounceInRight;
@@ -933,7 +935,7 @@
   }
 }
 
-.animate-bounceInUp(@duration:1s, @delay:0) {
+.animate-bounceInUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceInUp;
   animation-name: animate-bounceInUp;
@@ -981,7 +983,7 @@
   }
 }
 
-.animate-bounceOut(@duration:1s, @delay:0) {
+.animate-bounceOut(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceOut;
   animation-name: animate-bounceOut;
@@ -1025,7 +1027,7 @@
   }
 }
 
-.animate-bounceOutDown(@duration:1s, @delay:0) {
+.animate-bounceOutDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceOutDown;
   animation-name: animate-bounceOutDown;
@@ -1059,7 +1061,7 @@
   }
 }
 
-.animate-bounceOutLeft(@duration:1s, @delay:0) {
+.animate-bounceOutLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceOutLeft;
   animation-name: animate-bounceOutLeft;
@@ -1093,7 +1095,7 @@
   }
 }
 
-.animate-bounceOutRight(@duration:1s, @delay:0) {
+.animate-bounceOutRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceOutRight;
   animation-name: animate-bounceOutRight;
@@ -1137,7 +1139,7 @@
   }
 }
 
-.animate-bounceOutUp(@duration:1s, @delay:0) {
+.animate-bounceOutUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-bounceOutUp;
   animation-name: animate-bounceOutUp;
@@ -1167,7 +1169,7 @@
   }
 }
 
-.animate-fadeIn(@duration:1s, @delay:0) {
+.animate-fadeIn(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeIn;
   animation-name: animate-fadeIn;
@@ -1201,10 +1203,11 @@
   }
 }
 
-.animate-fadeInDown(@duration:1s, @delay:0) {
-  .animate(@duration, @delay);
+.animate-fadeInDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
+
   -webkit-animation-name: animate-fadeInDown;
   animation-name: animate-fadeInDown;
+  .animate(@duration, @delay);
 };
 
 @-webkit-keyframes animate-fadeInDownBig {
@@ -1235,7 +1238,7 @@
   }
 }
 
-.animate-fadeInDownBig(@duration:1s, @delay:0) {
+.animate-fadeInDownBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInDownBig;
   animation-name: animate-fadeInDownBig;
@@ -1269,7 +1272,7 @@
   }
 }
 
-.animate-fadeInLeft(@duration:1s, @delay:0) {
+.animate-fadeInLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInLeft;
   animation-name: animate-fadeInLeft;
@@ -1303,7 +1306,7 @@
   }
 }
 
-.animate-fadeInLeftBig(@duration:1s, @delay:0) {
+.animate-fadeInLeftBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInLeftBig;
   animation-name: animate-fadeInLeftBig;
@@ -1337,7 +1340,7 @@
   }
 }
 
-.animate-fadeInRight(@duration:1s, @delay:0) {
+.animate-fadeInRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInRight;
   animation-name: animate-fadeInRight;
@@ -1371,7 +1374,7 @@
   }
 }
 
-.animate-fadeInRightBig(@duration:1s, @delay:0) {
+.animate-fadeInRightBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInRightBig;
   animation-name: animate-fadeInRightBig;
@@ -1405,7 +1408,7 @@
   }
 }
 
-.fadeInUp(@duration:1s, @delay:0) {
+.fadeInUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInUp;
   animation-name: animate-fadeInUp;
@@ -1439,7 +1442,7 @@
   }
 }
 
-.animate-fadeInUpBig(@duration:1s, @delay:0) {
+.animate-fadeInUpBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeInUpBig;
   animation-name: animate-fadeInUpBig;
@@ -1469,7 +1472,7 @@
   }
 }
 
-.animate-fadeOut(@duration:1s, @delay:0) {
+.animate-fadeOut(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOut;
   animation-name: animate-fadeOut;
@@ -1499,7 +1502,7 @@
   }
 }
 
-.animate-fadeOutDown(@duration:1s, @delay:0) {
+.animate-fadeOutDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutDown;
   animation-name: animate-fadeOutDown;
@@ -1529,7 +1532,7 @@
   }
 }
 
-.animate-fadeOutDownBig(@duration:1s, @delay:0) {
+.animate-fadeOutDownBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutDownBig;
   animation-name: animate-fadeOutDownBig;
@@ -1559,7 +1562,7 @@
   }
 }
 
-.animate-fadeOutLeft(@duration:1s, @delay:0) {
+.animate-fadeOutLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutLeft;
   animation-name: animate-fadeOutLeft;
@@ -1589,7 +1592,7 @@
   }
 }
 
-.animate-fadeOutLeftBig(@duration:1s, @delay:0) {
+.animate-fadeOutLeftBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutLeftBig;
   animation-name: animate-fadeOutLeftBig;
@@ -1619,7 +1622,7 @@
   }
 }
 
-.animate-fadeOutRight(@duration:1s, @delay:0) {
+.animate-fadeOutRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutRight;
   animation-name: animate-fadeOutRight;
@@ -1649,7 +1652,7 @@
   }
 }
 
-.animate-fadeOutRightBig(@duration:1s, @delay:0) {
+.animate-fadeOutRightBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutRightBig;
   animation-name: animate-fadeOutRightBig;
@@ -1679,7 +1682,7 @@
   }
 }
 
-.animate-fadeOutUp(@duration:1s, @delay:0) {
+.animate-fadeOutUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutUp;
   animation-name: animate-fadeOutUp;
@@ -1709,7 +1712,7 @@
   }
 }
 
-.animate-fadeOutUpBig(@duration:1s, @delay:0) {
+.animate-fadeOutUpBig(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-fadeOutUpBig;
   animation-name: animate-fadeOutUpBig;
@@ -1793,7 +1796,7 @@
   }
 }
 
-.animate-flip(@duration:1s, @delay:0) {
+.animate-flip(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
@@ -1867,7 +1870,7 @@
   }
 }
 
-.animate-flipInX(@duration:1s, @delay:0) {
+.animate-flipInX(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -1941,7 +1944,7 @@
   }
 }
 
-.animate-flipInY(@duration:1s, @delay:0) {
+.animate-flipInY(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -1987,7 +1990,7 @@
   }
 }
 
-.animate-flipOutX(@duration:1s, @delay:0) {
+.animate-flipOutX(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-flipOutX;
   animation-name: animate-flipOutX;
@@ -2033,7 +2036,7 @@
   }
 }
 
-.animate-flipOutY(@duration:1s, @delay:0) {
+.animate-flipOutY(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -2097,12 +2100,12 @@
   }
 }
 
-.animate-lightSpeedIn(@duration:1s, @delay:0) {
+.animate-lightSpeedIn(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay, @timing-function:ease-out) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-lightSpeedIn;
   animation-name: animate-lightSpeedIn;
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
 };
 
 @-webkit-keyframes animate-lightSpeedOut {
@@ -2129,12 +2132,12 @@
   }
 }
 
-.lightSpeedOut(@duration:1s, @delay:0) {
+.animate-lightSpeedOut(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay, @timing-function:ease-in) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-lightSpeedOut;
   animation-name: animate-lightSpeedOut;
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
 };
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -2177,7 +2180,7 @@
   }
 }
 
-.rotateIn(@duration:1s, @delay:0) {
+.animate-rotateIn(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateIn;
   animation-name: animate-rotateIn;
@@ -2219,7 +2222,7 @@
   }
 }
 
-.rotateInDownLeft(@duration:1s, @delay:0) {
+.animate-rotateInDownLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateInDownLeft;
   animation-name: animate-rotateInDownLeft;
@@ -2261,7 +2264,7 @@
   }
 }
 
-.animate-rotateInDownRight(@duration:1s, @delay:0) {
+.animate-rotateInDownRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateInDownRight;
   animation-name: animate-rotateInDownRight;
@@ -2303,7 +2306,7 @@
   }
 }
 
-.animate-rotateInUpLeft(@duration:1s, @delay:0) {
+.animate-rotateInUpLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateInUpLeft;
   animation-name: animate-rotateInUpLeft;
@@ -2345,7 +2348,7 @@
   }
 }
 
-.animate-rotateInUpRight(@duration:1s, @delay:0) {
+.animate-rotateInUpRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateInUpRight;
   animation-name: animate-rotateInUpRight;
@@ -2387,7 +2390,7 @@
   }
 }
 
-.animate-rotateOut(@duration:1s, @delay:0) {
+.animate-rotateOut(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateOut;
   animation-name: animate-rotateOut;
@@ -2425,7 +2428,7 @@
   }
 }
 
-.animate-rotateOutDownLeft(@duration:1s, @delay:0) {
+.animate-rotateOutDownLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateOutDownLeft;
   animation-name: animate-rotateOutDownLeft;
@@ -2463,7 +2466,7 @@
   }
 }
 
-.animate-rotateOutDownRight(@duration:1s, @delay:0) {
+.animate-rotateOutDownRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateOutDownRight;
   animation-name: animate-rotateOutDownRight;
@@ -2501,7 +2504,7 @@
   }
 }
 
-.animate-rotateOutUpLeft(@duration:1s, @delay:0) {
+.animate-rotateOutUpLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateOutUpLeft;
   animation-name: animate-rotateOutUpLeft;
@@ -2539,7 +2542,7 @@
   }
 }
 
-.animate-rotateOutUpRight(@duration:1s, @delay:0) {
+.animate-rotateOutUpRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rotateOutUpRight;
   animation-name: animate-rotateOutUpRight;
@@ -2617,7 +2620,7 @@
   }
 }
 
-.animate-hinge(@duration:1s, @delay:0) {
+.animate-hinge(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-hinge;
   animation-name: animate-hinge;
@@ -2651,7 +2654,7 @@
   }
 }
 
-.animate-rollIn(@duration:1s, @delay:0) {
+.animate-rollIn(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rollIn;
   animation-name: animate-rollIn;
@@ -2681,7 +2684,7 @@
   }
 }
 
-.animate-rollOut(@duration:1s, @delay:0) {
+.animate-rollOut(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-rollOut;
   animation-name: animate-rollOut;
@@ -2715,7 +2718,7 @@
   }
 }
 
-.animate-zoomIn(@duration:1s, @delay:0) {
+.animate-zoomIn(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomIn;
   animation-name: animate-zoomIn;
@@ -2757,7 +2760,7 @@
   }
 }
 
-.animate-zoomInDown(@duration:1s, @delay:0) {
+.animate-zoomInDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomInDown;
   animation-name: animate-zoomInDown;
@@ -2799,7 +2802,7 @@
   }
 }
 
-.animate-zoomInLeft(@duration:1s, @delay:0) {
+.animate-zoomInLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomInLeft;
   animation-name: animate-zoomInLeft;
@@ -2841,7 +2844,7 @@
   }
 }
 
-.animate-zoomInRight(@duration:1s, @delay:0) {
+.animate-zoomInRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomInRight;
   animation-name: animate-zoomInRight;
@@ -2883,7 +2886,7 @@
   }
 }
 
-.animate-zoomInUp(@duration:1s, @delay:0) {
+.animate-zoomInUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomInUp;
   animation-name: animate-zoomInUp;
@@ -2925,7 +2928,7 @@
   }
 }
 
-.animate-zoomOut(@duration:1s, @delay:0) {
+.animate-zoomOut(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomOut;
   animation-name: animate-zoomOut;
@@ -2971,7 +2974,7 @@
   }
 }
 
-.animate-zoomOutDown(@duration:1s, @delay:0) {
+.animate-zoomOutDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomOutDown;
   animation-name: animate-zoomOutDown;
@@ -3009,7 +3012,7 @@
   }
 }
 
-.animate-zoomOutLeft(@duration:1s, @delay:0) {
+.animate-zoomOutLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomOutLeft;
   animation-name: animate-zoomOutLeft;
@@ -3047,7 +3050,7 @@
   }
 }
 
-.animate-zoomOutRight(@duration:1s, @delay:0) {
+.animate-zoomOutRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomOutRight;
   animation-name: animate-zoomOutRight;
@@ -3093,7 +3096,7 @@
   }
 }
 
-.animate-zoomOutUp(@duration:1s, @delay:0) {
+.animate-zoomOutUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-zoomOutUp;
   animation-name: animate-zoomOutUp;
@@ -3129,7 +3132,7 @@
   }
 }
 
-.animate-slideInDown(@duration:1s, @delay:0) {
+.animate-slideInDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideInDown;
   animation-name: animate-slideInDown;
@@ -3161,7 +3164,7 @@
   }
 }
 
-.animate-slideInLeft(@duration:1s, @delay:0) {
+.animate-slideInLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideInLeft;
   animation-name: animate-slideInLeft;
@@ -3193,7 +3196,7 @@
   }
 }
 
-.animate-slideInRight(@duration:1s, @delay:0) {
+.animate-slideInRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideInRight;
   animation-name: animate-slideInRight;
@@ -3225,7 +3228,7 @@
   }
 }
 
-.animate-slideInUp(@duration:1s, @delay:0) {
+.animate-slideInUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideInUp;
   animation-name: animate-slideInUp;
@@ -3261,7 +3264,7 @@
   }
 }
 
-.animate-slideOutDown(@duration:1s, @delay:0) {
+.animate-slideOutDown(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideOutDown;
   animation-name: animate-slideOutDown;
@@ -3293,7 +3296,7 @@
   }
 }
 
-.animate-slideOutLeft(@duration:1s, @delay:0) {
+.animate-slideOutLeft(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideOutLeft;
   animation-name: animate-slideOutLeft;
@@ -3325,7 +3328,7 @@
   }
 }
 
-.animate-slideOutRight(@duration:1s, @delay:0) {
+.animate-slideOutRight(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideOutRight;
   animation-name: animate-slideOutRight;
@@ -3357,7 +3360,7 @@
   }
 }
 
-.animate-slideOutUp(@duration:1s, @delay:0) {
+.animate-slideOutUp(@duration:@animateDefaultDuration, @delay:@animateDefaultDelay) {
   .animate(@duration, @delay);
   -webkit-animation-name: animate-slideOutUp;
   animation-name: animate-slideOutUp;
